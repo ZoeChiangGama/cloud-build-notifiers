@@ -13,9 +13,11 @@
 # limitations under the License.
 
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'asia-east1-docker.pkg.dev/gama-tpp/cloud-build-notifiers/googlechat:latest', '.' ]
-images:
-- 'asia-east1-docker.pkg.dev/gama-tpp/cloud-build-notifiers/googlechat:latest'
+- name: gcr.io/cloud-builders/docker
+  args:
+  - build
+  - --file=./googlechat/Dockerfile
+  - '.'
+
 tags:
 - cloud-build-notifiers-googlechat
