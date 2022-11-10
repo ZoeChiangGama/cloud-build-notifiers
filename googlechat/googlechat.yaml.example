@@ -20,8 +20,8 @@ spec:
   notification:
     filter: build.status == Build.Status.SUCCESS
     delivery:
-      webhookUrl:
-        secretRef: webhook-url
+      webhookUrl: 
+        secretRef: GamaTppChatSecret
   secrets:
-  - name: webhook-url
-    value: projects/example-project/secrets/example-googlechat-notifier-webhook-url/versions/latest
+  - name: GamaTppChatSecret
+    value: projects/gama-tpp/secrets/GamaTppChatSecret/versions/latest
