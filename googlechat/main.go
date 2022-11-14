@@ -168,8 +168,7 @@ func (g *googlechatNotifier) writeMessage(build *cbpb.Build) (*chat.Message, err
 			log.Infof("Trigger Repo URI: %s", trigger_info.??)
 		*/
 
-		repo_name := build.Substitutions["REPO_NAME"]
-		createTime := build.Substitutions["REPO_NAME"]
+		createTime := build.Substitutions["CreateTime"]
 		trigger_name := build.Substitutions["TRIGGER_NAME"]
 		commit := build.Substitutions["SHORT_SHA"]
 
@@ -201,7 +200,7 @@ func (g *googlechatNotifier) writeMessage(build *cbpb.Build) (*chat.Message, err
 				{
 					KeyValue: &chat.KeyValue{
 						TopLabel: "CreateTime",
-						Content:  trigger_name,
+						Content:  createTime,
 					},
 				},
 				{
