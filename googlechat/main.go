@@ -199,8 +199,8 @@ func (g *googlechatNotifier) writeMessage(build *cbpb.Build) (*chat.Message, err
 				},
 				{
 					KeyValue: &chat.KeyValue{
-						TopLabel: "Repo",
-						Content:  repo_name,
+						TopLabel: "Policy",
+						Content:  policy_name,
 					},
 				},
 				{
