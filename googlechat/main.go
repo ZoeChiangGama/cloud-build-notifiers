@@ -169,6 +169,7 @@ func (g *googlechatNotifier) writeMessage(build *cbpb.Build) (*chat.Message, err
 		*/
 
 		repo_name := build.Substitutions["REPO_NAME"]
+		createTime := build.createTime
 		trigger_name := build.Substitutions["TRIGGER_NAME"]
 		commit := build.Substitutions["SHORT_SHA"]
 
@@ -199,8 +200,8 @@ func (g *googlechatNotifier) writeMessage(build *cbpb.Build) (*chat.Message, err
 				},
 				{
 					KeyValue: &chat.KeyValue{
-						TopLabel: "Policy",
-						Content:  policy_name,
+						TopLabel: "CreateTime",
+						Content:  createTime,
 					},
 				},
 				{
